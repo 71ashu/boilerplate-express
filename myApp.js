@@ -1,10 +1,9 @@
 var express = require('express');
 var app = express();
 
-app.get('/json', (req, res) => {
-  res.json({
-    "message": "Hello json"
-  })
+
+app.get('/:word/echo',(req, res) => {
+  res.send({ echo: req.params.word });
 });
 
 
@@ -35,11 +34,4 @@ app.get('/json', (req, res) => {
 
 
 
-
-
-
-
-
-
-
- module.exports = app;
+module.exports = app;
